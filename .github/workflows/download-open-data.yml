@@ -1,0 +1,16 @@
+name: Dados abertos da RFB
+
+on:
+  push:
+  schedule:
+    - cron: '0 0 25 * *'  
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./download.sh
+      - uses: actions/upload-artifact@v3
+        with:
+          path: tmp/data.tgz
