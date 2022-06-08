@@ -2,6 +2,7 @@ name: Dados abertos da RFB
 
 on:
   push:
+  workflow_dispatch:    
   schedule:
     - cron: '0 0 25 * *'  
 
@@ -13,4 +14,4 @@ jobs:
       - run: ./download.sh
       - uses: actions/upload-artifact@v3
         with:
-          path: tmp/data.tgz
+          path: tmp/*.zip

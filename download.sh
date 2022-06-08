@@ -19,13 +19,12 @@ done
 
 wait $(jobs -p)
 
-# Pack all files
-tar -czf data.tgz *.zip     
-
 # unzip files
+unzip *.zip
 
 # Merge files with same type
-#cat *EMPRECSV.csv > FULL-EMPRECSV.csv
-#cat *ESTABELE.csv > FULL-ESTABELE.csv
-#cat *SOCIOCSV.csv > FULL-SOCIOCSV.csv
+cat *EMPRECSV > EMPRE.csv
+cat *ESTABELE > ESTABELE.csv
+cat *SOCIOCSV > SOCIO.csv
 
+for file in *; do zip -rm -9 ${file%.*}.zip $file; done
