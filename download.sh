@@ -3,7 +3,7 @@
 mkdir tmp
 cd tmp
 
-URL=https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/dados-publicos-cnpj
+URL=https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj/$(date '+%Y-%m')/
 
 # Download public index
 files=$( \
