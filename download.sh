@@ -6,7 +6,7 @@ cd tmp
 URL=https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj/$(date '+%Y-%m')/
 
 # Download public index
-wget --no-parent -r $URL
+aria2c -x 16 -s 16 $URL
 
 wait $(jobs -p)
 
