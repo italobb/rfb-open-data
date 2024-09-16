@@ -7,7 +7,7 @@ URL=https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj/$(date --date="$(dat
 
 sudo apt-get install -y wget2
 # Download public index
-wget2 --num-threads=16 --no-parent -r $URL
+wget2 --max-threads=32 --no-parent -r $URL
 
 wait $(jobs -p)
 
