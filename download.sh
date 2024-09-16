@@ -5,7 +5,7 @@ cd tmp
 
 URL=https://dadosabertos.rfb.gov.br/CNPJ/dados_abertos_cnpj/$(date --date="$(date +'%Y-%m-01') - 1 month" '+%Y-%m')/
 
-apt install -y wget2
+sudo apt-get install -y wget2
 # Download public index
 wget2 --num-threads=16 --no-parent -r $URL
 
